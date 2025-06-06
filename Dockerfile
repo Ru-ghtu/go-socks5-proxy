@@ -31,6 +31,7 @@ WORKDIR /app
 # Copy the Pre-built binary file from the previous stage
 COPY --from=builder /build/socks5-server .
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY users.conf .
 
 # Expose port 1080 to the outside
 EXPOSE 1080
